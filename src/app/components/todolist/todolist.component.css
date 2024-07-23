@@ -1,0 +1,11 @@
+.edit {
+  border: solid 2px orange;
+}
+
+.notedit {
+  border: none;
+}
+
+.crossed {
+  text-decoration: line-through;
+}

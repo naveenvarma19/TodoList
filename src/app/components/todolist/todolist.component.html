@@ -19,18 +19,29 @@
                 <th scope="col">Task</th>
                 <th scope="col">Completed</th>
                 <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Save</th>
             </tr>
         </thead>
         <tbody class="text-center">
-            @for (t of taskArray; track $index) {
+            @for (task of taskList; track $index) {
             <tr>
-                <td>{{t.taskName}}</td>
+                <td class="text-center">
+                    <input type="text" class="form-control w-50" id="taskInTable" value="{{task.taskName}}"
+                        [readOnly]="!task.isEditable" #taskInput
+                        [ngClass]="{'edit': task.isEditable, 'notedit':!task.isEditable, 'crossed':task.isCompleted}">
+                </td>
                 <td class="text-center"><input type="checkbox" (change)="onCheck($index)"></td>
                 <td><button type="submit" class="btn btn-danger btn-sm" (click)="onDeleteTask($index)">Delete</button>
+                </td>
+                <td><button type="submit" class="btn btn-warning btn-sm" (click)="onEditTask($index)"
+                        [disabled]="task.isEditable">Edit</button>
+                </td>
+                <td><button type="submit" class="btn btn-primary btn-sm" (click)="onSaveTask($index,taskInput.value)"
+                        [disabled]="!task.isEditable">Save</button>
                 </td>
             </tr>
             }
         </tbody>
     </table>
-
 </div>

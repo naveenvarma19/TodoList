@@ -1,34 +1,45 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-todolist',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',
 })
 export class TodolistComponent implements OnInit {
-  taskArray = [{ taskName: 'Brush', isCompleted: false }];
+  taskList = [{ taskName: 'Brush', isCompleted: false, isEditable: false }];
 
   constructor() {}
 
   ngOnInit(): void {}
 
   onSubmit(form: NgForm) {
-    this.taskArray.push({
+    this.taskList.push({
       taskName: form.controls['task'].value,
       isCompleted: false,
+      isEditable: false,
     });
 
     form.reset();
   }
 
   onCheck(index: any) {
-    this.taskArray[index].isCompleted = !this.taskArray[index].isCompleted;
+    this.taskList[index].isCompleted = !this.taskList[index].isCompleted;
   }
 
   onDeleteTask(index: any) {
-    this.taskArray.splice(index, 1);
+    this.taskList.splice(index, 1);
+  }
+
+  onEditTask(index: any) {
+    this.taskList[index].isEditable = true;
+  }
+
+  onSaveTask(index: any, taskInTable: string) {
+    this.taskList[index].taskName = taskInTable;
+    this.taskList[index].isEditable = false;
   }
 }
