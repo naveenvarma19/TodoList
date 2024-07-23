@@ -31,7 +31,8 @@
                         [readOnly]="!task.isEditable" #taskInput
                         [ngClass]="{'edit': task.isEditable, 'notedit':!task.isEditable, 'crossed':task.isCompleted}">
                 </td>
-                <td class="text-center"><input type="checkbox" (change)="onCheck($index)"></td>
+                <td class="text-center"><input type="checkbox" (change)="onCheck($index)" [checked]="task.isCompleted">
+                </td>
                 <td><button type="submit" class="btn btn-danger btn-sm" (click)="onDeleteTask($index)">Delete</button>
                 </td>
                 <td><button type="submit" class="btn btn-warning btn-sm" (click)="onEditTask($index)"
