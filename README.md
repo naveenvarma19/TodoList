@@ -1,27 +1,76 @@
-# TodoList
+# To-Do List Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+A robust To-Do List application developed using Angular. This application allows users to create, edit, complete, and delete tasks, with data persistence through local storage. Enhanced user experience and accessibility are achieved using Angular Material and Tailwind CSS.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Task Creation**: Easily add new tasks to your list.
+- **Task Editing**: Modify existing tasks as needed.
+- **Task Completion**: Mark tasks as complete.
+- **Task Deletion**: Remove tasks from your list.
+- **Data Persistence**: Tasks are saved in local storage, ensuring data is retained across sessions.
+- **User Experience**: Enhanced with Angular Material and Tailwind CSS for a sleek and responsive design.
 
-## Code scaffolding
+## Demo
+https://naveenvarma-todolist.netlify.app/
+<img width="959" alt="Screenshot 2024-07-23 144411" src="https://github.com/user-attachments/assets/5ee8c90d-7cac-48f1-9136-5b6025de8375">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To get a local copy up and running, follow these simple steps.
 
-## Running unit tests
+### Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node.js
+- Angular CLI
 
-## Running end-to-end tests
+### Installation Steps
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/naveenvarma19/TodoList
+   cd todo-list
+   ```
 
-## Further help
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. **Run the application:**
+   ```bash
+   ng serve
+   ```
+
+4. **Open your browser and navigate to:**
+   ```
+   http://localhost:4200/
+   ```
+
+## Usage
+
+### Task Creation
+
+1. Enter the task in the input field.
+2. Click the "Add Task" button.
+
+### Task Editing
+
+1. Click the "Edit" button next to the task.
+2. Modify the task details.
+3. Click the "Save" button.
+
+### Task Completion
+
+1. Click the checkbox next to the task to mark it as complete.
+
+### Task Deletion
+
+1. Click the "Delete" button next to the task to remove it.
+
+## Built With
+
+- [Angular](https://angular.io/) - The web framework used.
+- [Angular Material](https://material.angular.io/) - UI component library.
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework.
