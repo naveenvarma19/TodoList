@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center p-4 m-2">To-do List</h1>
+  <h1 class="text-center p-4 m-2 text-white">To-do List</h1>
 
   <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
     <div class="form-group">
@@ -27,7 +27,7 @@
   </form>
   <hr />
   @if (taskList.length>0) {
-  <table class="table">
+  <table class="table table-rounded">
     <thead class="text-center">
       <tr>
         <th scope="col">Task</th>
@@ -43,7 +43,7 @@
         <td class="text-center">
           <input
             type="text"
-            class="form-control w-50"
+            class="form-control w-100 text-center"
             id="taskInTable"
             value="{{ task.taskName }}"
             [readOnly]="!task.isEditable"

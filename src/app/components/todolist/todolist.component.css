@@ -9,3 +9,28 @@
 .crossed {
   text-decoration: line-through;
 }
+.table-rounded {
+  border-radius: 15px;
+  overflow: hidden;
+  border-collapse: separate; /* Ensure borders don't overlap */
+}
+
+.table-rounded thead {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+}
+
+.table-rounded thead tr {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+}
+
+.table-rounded tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+.table-rounded tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
