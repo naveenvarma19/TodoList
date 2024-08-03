@@ -1,31 +1,34 @@
 <div class="container">
   <h1 class="text-center p-4 m-2 text-white">To-do List</h1>
 
-  <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
-    <div class="form-group">
-      <label for="task">Task</label>
-      <input
-        type="text"
-        required
-        class="form-control"
-        id="task"
-        placeholder="Enter task"
-        ngModel
-        name="task"
-      />
-      @if (taskForm.dirty && taskForm.invalid) {
-      <small id="error" class="form-text text-danger">Required Field</small>
-      }
-    </div>
+  <form
+    (ngSubmit)="onSubmit(taskForm)"
+    #taskForm="ngForm"
+    class="d-flex align-items-center justify-content-center"
+  >
+    <input
+      type="text"
+      required
+      class="form-control w-50 rounded-start"
+      id="task"
+      placeholder="Enter Goal"
+      ngModel
+      name="task"
+    />
     <button
       [disabled]="taskForm.invalid"
       type="submit"
-      class="btn btn-primary mt-4"
+      class="btn btn-primary rounded-end"
     >
       Submit
     </button>
   </form>
+
+  @if (taskForm.dirty && taskForm.invalid) {
+  <small id="error" class="form-text text-danger">Required Field</small>
+  }
   <hr />
+
   @if (taskList.length>0) {
   <table class="table table-rounded">
     <thead class="text-center">
@@ -97,3 +100,10 @@
   </table>
   }
 </div>
+@if (taskList.length<=0) {
+<div class="text-center text-white">
+  <h4>Welcome to a new productive day!</h4>
+  <h6 class="blinking">Stay focused, Stay organized and make things happen!</h6>
+</div>
+
+}

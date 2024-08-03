@@ -34,3 +34,30 @@
 .table-rounded tbody tr:last-child td:last-child {
   border-bottom-right-radius: 15px;
 }
+
+.form-control,
+.btn {
+  border-radius: 0;
+}
+.form-control.rounded-start {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn.rounded-end {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.blinking {
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
