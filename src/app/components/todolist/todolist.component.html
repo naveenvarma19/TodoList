@@ -59,39 +59,34 @@
           />
         </td>
         <td class="text-center">
-          <input
-            type="checkbox"
+          <mat-slide-toggle
             (change)="onCheck($index)"
             [checked]="task.isCompleted"
-          />
+          ></mat-slide-toggle>
         </td>
         <td>
-          <button
-            type="submit"
-            class="btn btn-danger btn-sm"
-            (click)="onDeleteTask($index)"
-          >
-            Delete
+          <button mat-icon-button (click)="onDeleteTask($index)" color="warn">
+            <mat-icon fontIcon="delete"></mat-icon>
           </button>
         </td>
         <td>
           <button
-            type="submit"
-            class="btn btn-warning btn-sm"
+            mat-icon-button
             (click)="onEditTask($index)"
             [disabled]="task.isEditable"
+            color="accent"
           >
-            Edit
+            <mat-icon fontIcon="edit"></mat-icon>
           </button>
         </td>
         <td>
           <button
-            type="submit"
-            class="btn btn-primary btn-sm"
+            mat-icon-button
             (click)="onSaveTask($index, taskInput.value)"
             [disabled]="!task.isEditable"
+            style="background-color: white; color: #4caf50"
           >
-            Save
+            <mat-icon fontIcon="save"></mat-icon>
           </button>
         </td>
       </tr>

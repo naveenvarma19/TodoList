@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 interface Task {
   taskName: string;
@@ -11,7 +14,13 @@ interface Task {
 @Component({
   selector: 'app-todolist',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',
 })
