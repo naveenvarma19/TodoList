@@ -4,6 +4,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 interface Task {
   taskName: string;
@@ -17,15 +19,18 @@ interface Task {
   imports: [
     FormsModule,
     CommonModule,
+    FontAwesomeModule,
     MatSlideToggleModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
   ],
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',
 })
 export class TodolistComponent implements OnInit {
   taskList: Task[] = [];
+  hidesort: boolean = true;
 
   constructor() {}
 
@@ -74,5 +79,16 @@ export class TodolistComponent implements OnInit {
     this.taskList[index].taskName = taskInTable;
     this.taskList[index].isEditable = false;
     this.saveToLocalStorage();
+  }
+
+  onSortAsc() {
+    this.taskList.sort((a, b) => a.taskName.localeCompare(b.taskName));
+    this.saveToLocalStorage();
+    this.hidesort = !this.hidesort;
+  }
+  onSortDsc() {
+    this.taskList.reverse();
+    this.saveToLocalStorage();
+    this.hidesort = !this.hidesort;
   }
 }

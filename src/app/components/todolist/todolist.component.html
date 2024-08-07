@@ -25,7 +25,11 @@
   </form>
 
   @if (taskForm.dirty && taskForm.invalid) {
-  <small id="error" class="form-text text-danger">Required Field</small>
+  <small
+    id="error"
+    class="d-flex justify-content-center align-items-center text-danger"
+    >Required Field</small
+  >
   }
   <hr />
 
@@ -33,11 +37,21 @@
   <table class="table table-rounded">
     <thead class="text-center">
       <tr>
-        <th scope="col">Task</th>
+        <th
+          scope="col"
+          class="d-flex align-items-center justify-content-center"
+        >
+          Task
+          <mat-icon
+            [fontIcon]="hidesort ? 'arrow_drop_up' : 'arrow_drop_down'"
+            (click)="hidesort ? onSortAsc() : onSortDsc()"
+            color="accent"
+            [matTooltip]="hidesort ? 'Sort Ascending' : 'Sort Descending'"
+            matTooltipPosition="right"
+          ></mat-icon>
+        </th>
+        <th scope="col">Actions</th>
         <th scope="col">Completed</th>
-        <th scope="col">Delete</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Save</th>
       </tr>
     </thead>
     <tbody class="text-center">
@@ -58,36 +72,44 @@
             }"
           />
         </td>
+
+        <td>
+          <button
+            mat-icon-button
+            (click)="onDeleteTask($index)"
+            color="warn"
+            matTooltip="Delete"
+            matTooltipPosition="left"
+          >
+            <mat-icon fontIcon="delete"></mat-icon>
+          </button>
+          @if(!task.isEditable){
+          <button
+            mat-icon-button
+            (click)="onEditTask($index)"
+            color="accent"
+            matTooltip="Edit"
+            matTooltipPosition="right"
+          >
+            <mat-icon fontIcon="edit"></mat-icon>
+          </button>
+          } @if(task.isEditable){
+
+          <button
+            mat-icon-button
+            (click)="onSaveTask($index, taskInput.value)"
+            style="background-color: white; color: #4caf50"
+            matTooltip="Save"
+            matTooltipPosition="right"
+          >
+            <mat-icon fontIcon="save"></mat-icon></button
+          >}
+        </td>
         <td class="text-center">
           <mat-slide-toggle
             (change)="onCheck($index)"
             [checked]="task.isCompleted"
           ></mat-slide-toggle>
-        </td>
-        <td>
-          <button mat-icon-button (click)="onDeleteTask($index)" color="warn">
-            <mat-icon fontIcon="delete"></mat-icon>
-          </button>
-        </td>
-        <td>
-          <button
-            mat-icon-button
-            (click)="onEditTask($index)"
-            [disabled]="task.isEditable"
-            color="accent"
-          >
-            <mat-icon fontIcon="edit"></mat-icon>
-          </button>
-        </td>
-        <td>
-          <button
-            mat-icon-button
-            (click)="onSaveTask($index, taskInput.value)"
-            [disabled]="!task.isEditable"
-            style="background-color: white; color: #4caf50"
-          >
-            <mat-icon fontIcon="save"></mat-icon>
-          </button>
         </td>
       </tr>
       }
