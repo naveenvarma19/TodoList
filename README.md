@@ -1,6 +1,6 @@
 # To-Do List Application
 
-A robust To-Do List application developed using Angular. This application allows users to create, edit, complete, and delete tasks, with data persistence through local storage. Enhanced user experience and accessibility are achieved using Angular Material and Tailwind CSS.
+A robust To-Do List application developed using Angular. This application allows users to create, edit, complete, and delete tasks, with data persistence through local storage. Enhanced user experience and accessibility are achieved using Angular Material and Bootstrap.
 
 ## Features
 
@@ -9,11 +9,12 @@ A robust To-Do List application developed using Angular. This application allows
 - **Task Completion**: Mark tasks as complete.
 - **Task Deletion**: Remove tasks from your list.
 - **Data Persistence**: Tasks are saved in local storage, ensuring data is retained across sessions.
-- **User Experience**: Enhanced with Angular Material and Tailwind CSS for a sleek and responsive design.
+- **User Experience**: Enhanced with Angular Material and Bootsrap for a sleek and responsive design.
 
 ## Demo
 https://naveenvarma-todolist.netlify.app/
-<img width="959" alt="Screenshot 2024-07-23 144411" src="https://github.com/user-attachments/assets/5ee8c90d-7cac-48f1-9136-5b6025de8375">
+<img width="760" alt="todolist2" src="https://github.com/user-attachments/assets/82640420-aad3-479d-871e-ccab8dbe7c2a">
+<img width="944" alt="Todolist1" src="https://github.com/user-attachments/assets/a481f32b-53a2-46bc-baaf-c37890c81329">
 
 
 ## Installation
@@ -73,4 +74,5 @@ To get a local copy up and running, follow these simple steps.
 
 - [Angular](https://angular.io/) - The web framework used.
 - [Angular Material](https://material.angular.io/) - UI component library.
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework.
+- [Bootstrap](https://getbootstrap.com/) - Front-end component library.
+
