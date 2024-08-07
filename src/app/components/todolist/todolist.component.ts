@@ -30,7 +30,7 @@ interface Task {
 })
 export class TodolistComponent implements OnInit {
   taskList: Task[] = [];
-  hidesort: boolean = true;
+  sortAsc: boolean = true;
 
   constructor() {}
 
@@ -84,11 +84,11 @@ export class TodolistComponent implements OnInit {
   onSortAsc() {
     this.taskList.sort((a, b) => a.taskName.localeCompare(b.taskName));
     this.saveToLocalStorage();
-    this.hidesort = !this.hidesort;
+    this.sortAsc = !this.sortAsc;
   }
   onSortDsc() {
     this.taskList.reverse();
     this.saveToLocalStorage();
-    this.hidesort = !this.hidesort;
+    this.sortAsc = !this.sortAsc;
   }
 }

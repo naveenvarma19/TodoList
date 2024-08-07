@@ -41,13 +41,14 @@
           scope="col"
           class="d-flex align-items-center justify-content-center"
         >
-          Task
+          Goals
           <mat-icon
-            [fontIcon]="hidesort ? 'arrow_drop_up' : 'arrow_drop_down'"
-            (click)="hidesort ? onSortAsc() : onSortDsc()"
+            fontIcon="sort"
+            (click)="sortAsc ? onSortAsc() : onSortDsc()"
             color="accent"
-            [matTooltip]="hidesort ? 'Sort Ascending' : 'Sort Descending'"
+            [matTooltip]="sortAsc ? 'Sort Ascending' : 'Sort Descending'"
             matTooltipPosition="right"
+            class="mx-2"
           ></mat-icon>
         </th>
         <th scope="col">Actions</th>
