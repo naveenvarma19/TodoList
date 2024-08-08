@@ -6,6 +6,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChangeDetectionStrategy, inject } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { MetadataComponent } from '../metadata/metadata.component';
+import { HeaderComponent } from '../header/header.component';
 
 interface Task {
   taskName: string;
@@ -24,13 +35,16 @@ interface Task {
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
+    HeaderComponent,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './todolist.component.html',
   styleUrl: './todolist.component.css',
 })
 export class TodolistComponent implements OnInit {
   taskList: Task[] = [];
   sortAsc: boolean = true;
+  readonly dialog = inject(MatDialog);
 
   constructor() {}
 
@@ -39,6 +53,11 @@ export class TodolistComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    this.dialog.open(MetadataComponent, {
+      width: '750px',
+      height: '500px',
+    });
+
     this.taskList.push({
       taskName: form.controls['task'].value,
       isCompleted: false,
