@@ -49,16 +49,18 @@ export class TodolistComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    const { taskName, taskDescription } = form.value;
-    this.taskList.push({
-      taskName,
-      taskDescription,
-      isCompleted: false,
-      isNameEditable: false,
-      isDescriptionEditable: false,
-    });
-    this.saveToLocalStorage();
-    form.reset();
+    if (form.valid) {
+      const { taskName, taskDescription } = form.value;
+      this.taskList.push({
+        taskName,
+        taskDescription,
+        isCompleted: false,
+        isNameEditable: false,
+        isDescriptionEditable: false,
+      });
+      this.saveToLocalStorage();
+      form.reset();
+    }
   }
 
   saveToLocalStorage() {

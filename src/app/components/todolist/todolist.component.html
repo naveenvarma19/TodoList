@@ -14,7 +14,14 @@
           placeholder="Enter Task Name"
           ngModel
           name="taskName"
+          #taskName="ngModel"
         />
+        <div
+          *ngIf="taskName.invalid && (taskName.dirty || taskName.touched)"
+          class="text-danger"
+        >
+          Task Name is required.
+        </div>
       </div>
       <!-- Description Input -->
       <div class="col-12">
@@ -26,17 +33,28 @@
           placeholder="Enter Description"
           ngModel
           name="taskDescription"
+          #taskDescription="ngModel"
         />
+        <div
+          *ngIf="
+            taskDescription.invalid &&
+            (taskDescription.dirty || taskDescription.touched)
+          "
+          class="text-danger"
+        >
+          Description is required.
+        </div>
       </div>
       <!-- Submit Button -->
       <div class="col-12">
-        <button
-          [disabled]="taskForm.invalid"
-          type="submit"
-          class="btn btn-primary w-100"
-        >
-          Submit
-        </button>
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </div>
+      <!-- General Error Message -->
+      <div
+        *ngIf="taskForm.submitted && taskForm.invalid"
+        class="col-12 text-danger text-center"
+      >
+        <p>Both fields are required!</p>
       </div>
     </form>
   </div>
