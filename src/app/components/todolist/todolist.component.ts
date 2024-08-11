@@ -15,7 +15,6 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
-import { MetadataComponent } from '../metadata/metadata.component';
 import { HeaderComponent } from '../header/header.component';
 
 interface Task {
@@ -53,11 +52,6 @@ export class TodolistComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.dialog.open(MetadataComponent, {
-      width: '750px',
-      height: '500px',
-    });
-
     this.taskList.push({
       taskName: form.controls['task'].value,
       isCompleted: false,

@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { FormsModule } from '@angular/forms';
-import { MetadataComponent } from './components/metadata/metadata.component';
-import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterLink,
     TodolistComponent,
     FormsModule,
-    MetadataComponent,
-    HeaderComponent,
+    NavbarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

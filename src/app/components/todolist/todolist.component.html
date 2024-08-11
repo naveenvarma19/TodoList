@@ -1,6 +1,4 @@
 <div class="container">
-  <app-header />
-
   <form
     (ngSubmit)="onSubmit(taskForm)"
     #taskForm="ngForm"
@@ -30,10 +28,7 @@
     class="d-flex justify-content-center align-items-center text-danger"
     >Required Field</small
   >
-  }
-  <hr />
-
-  @if (taskList.length>0) {
+  } @if (taskList.length>0) {
   <table class="table table-rounded">
     <thead class="text-center">
       <tr>
@@ -119,9 +114,18 @@
   }
 </div>
 @if (taskList.length<=0) {
-<div class="text-center text-white">
-  <h4>Welcome to a new productive day!</h4>
-  <h6 class="blinking">Stay focused, Stay organized and make things happen!</h6>
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis">TaskOrganizr</h1>
+  <h1 class="display-5 fw-semi-bold text-body-emphasis">
+    Stay Organized, Stay Ahead
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Transform chaos into clarity. Add tasks, assign priorities, and monitor
+      deadlines effortlessly. TaskOrganizr is your go-to tool for mastering
+      productivity and achieving more.
+    </p>
+  </div>
 </div>
 
 }
