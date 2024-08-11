@@ -1,10 +1,9 @@
 <div class="px-4 py-5 my-5 text-center">
   <h1 class="display-5 fw-bold text-body-emphasis">
     TaskOrganizr
-    <span
-      routerLink="/todolist"
-      class="btn btn-primary bi bi-check2-square"
-    ></span>
+    <a [routerLink]="'/todolist'" class="btn btn-primary">
+      <i class="bi bi-check2-square"></i>
+    </a>
   </h1>
   <h1 class="display-5 fw-semi-bold text-body-emphasis">
     Stay Organized, Stay Ahead
@@ -15,6 +14,11 @@
       deadlines effortlessly. TaskOrganizr is your go-to tool for mastering
       productivity and achieving more.
     </p>
+  </div>
+  <div class="overflow-hidden" style="max-height: 50vh">
+    <div class="container px-5">
+      <img src="assets/home.jpg" alt="Home Image" class="img-fluid" />
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>
