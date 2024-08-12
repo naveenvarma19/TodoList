@@ -1,24 +1,36 @@
-<div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold text-body-emphasis">
-    TaskOrganizr
-    <a [routerLink]="'/todolist'" class="btn btn-primary">
-      <i class="bi bi-check2-square"></i>
-    </a>
-  </h1>
-  <h1 class="display-5 fw-semi-bold text-body-emphasis">
-    Stay Organized, Stay Ahead
-  </h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">
-      Transform chaos into clarity. Add tasks, assign priorities, and monitor
-      deadlines effortlessly. TaskOrganizr is your go-to tool for mastering
-      productivity and achieving more.
-    </p>
-  </div>
-  <div class="overflow-hidden" style="max-height: 50vh">
-    <div class="container px-5">
-      <img src="assets/home.jpg" alt="Home Image" class="img-fluid" />
+<div class="container col-xxl-8 px-4 h-full">
+  <div class="row align-items-center g-5 py-5">
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis">TaskOrganizr</h1>
+      <h1 class="display-6 text-body-emphasis lh-1 mb-3">
+        Stay Organized, Stay Ahead
+      </h1>
+      <p class="lead">
+        Transform chaos into clarity. Add tasks, assign priorities, and monitor
+        deadlines effortlessly. TaskOrganizr is your go-to tool for mastering
+        productivity and achieving more.
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button
+          type="button"
+          routerLink="/todolist"
+          class="btn btn-primary btn-lg px-4 me-md-2"
+        >
+          Get Started
+        </button>
+      </div>
+    </div>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img
+        src="assets/home.png"
+        class="d-block mx-lg-auto img-fluid"
+        alt="Bootstrap Themes"
+        width="700"
+        height="500"
+        loading="lazy"
+      />
     </div>
   </div>
 </div>
+
 <router-outlet></router-outlet>
